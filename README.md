@@ -1,7 +1,7 @@
 # HTTParty | Cucumber
 
 ## Bundler
-Instale o Bundler:
+Install o Bundler:
 
 ```ruby
 $ gem install bundler
@@ -9,13 +9,12 @@ $ gem install bundler
 
 ## Projeto
 
->Faça o Clone do projeto
->Execute o comando  para instalar as dependências
+>Make the Project Clone
+>Run the command to install the dependencies
 ```ruby
 $ bundle install
 ```
->Rode o projeto usando o comando
-
+>Run the project using the command
 ```ruby
 $ cucumber
 ```

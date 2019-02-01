@@ -1,6 +1,6 @@
 Before '@startup' do
 
-    @nname = Faker::Company.name
+    @name = Faker::Company.name
     @city= Faker::Address.city
 
     @body = {

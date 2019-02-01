@@ -1,4 +1,4 @@
-version: 2 # use CircleCI 2.1
+version: 2.1 # use CircleCI 2.1
 jobs: # a collection of steps
   build:
     working_directory: ~/HTTParty # directory where steps will run
@@ -33,16 +33,14 @@ jobs: # a collection of steps
           key: rails-demo-bundle-v2-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
-        
-      # run tests
+      
+      #Run tests
       - run:
           name: Run Cucumber 
           command: |
-            mkdir -p /test-results
-            
-               bundle exec cucumber --format pretty 
-                                    --format html 
-                                    --out=test_results/features_report.html
+            bundle exec cucumber --format pretty 
+                                 --format html 
+                                 --out=test_results/features_report.html
             
       # Save test results for timing analysis
       - store_test_results:

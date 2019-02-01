@@ -1,11 +1,11 @@
 Before '@startup' do
 
-    @nome = Faker::Company.name
-    @cidade = Faker::Address.city
+    @nname = Faker::Company.name
+    @city= Faker::Address.city
 
     @body = {
-        "nome": @nome,
-        "cidade": @cidade
+        "nome": @name,
+        "cidade": @city
     }
 
     @startup = Startup.new(@body)

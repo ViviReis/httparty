@@ -1,19 +1,19 @@
-Dado("o endereço da API para manter o cadastro de Startup") do
-  #já instanciado pela classe Startup
+Dado("the API address to maintain the Startup registry") do
+  #already instantiated by the class Startup
 end
 
-Quando("realizar uma requisição para cadastrar uma startup") do
+Given("make a request to register a startup") do
   $response = @startup.postStartup
 end
 
-Então("a API irá retornar os dados do cadastro da Startup respondendo o código {int}") do |int|
+Then("the API will return the data of the registry of Startup answering the code {int}") do |int|
   #expect do status code e message
   expect($response.code).to eq(int)
   puts "Response code: #{$response.code}"
   expect($response.message).to eq("Created")
   puts "Response Message: #{$response.message}"
   
-  #imprime os atributos da requisição
+  #prints the requisition attributes
   puts "ID    : #{$response["id"]}"
   puts "Data  : #{$response["data"]}"
   puts "Nome  : #{$response["nome"]}"
@@ -24,11 +24,11 @@ Então("a API irá retornar os dados do cadastro da Startup respondendo o códig
   
 end
 
-Quando("realizar uma requisição passando o ID da startup") do
+Given("make a request by passing the startup ID") do
   $get = @startup.getStartup($id)
 end
 
-Então("a API irá retornar os dados da Startup correspondente respondendo o código {int}") do |int|
+Then("the API will return the corresponding Startup data by replying to the code {int}") do |int|
   expect($get.code).to eq(int)
   expect($get.message).to eq("OK")
   expect($get["id"]).to eq($response["id"])
@@ -42,11 +42,11 @@ Então("a API irá retornar os dados da Startup correspondente respondendo o có
   
 end
 
-Quando("realizar uma requisição para alterar uma startup") do
+Given("make a request to change a startup") do
   $put = @startup.putStartup($get["id"])
 end
 
-Então("a API irá retornar os dados da Startup alterados respondendo o código {int}") do |int|
+Then("the API will return the changed Startup data by replying to the code {int}") do |int|
   expect($put.code).to eq(int)
   expect($put.message).to eq("OK")
   expect($put["id"]).to eq($response["id"])
@@ -59,11 +59,11 @@ Então("a API irá retornar os dados da Startup alterados respondendo o código 
   puts "Status Code: #{$put.code}"
 end
 
-Quando("realizar uma requisição para excluir uma startup") do
+Given("make a request to delete a startup") do
 $delete = @startup.deleteStartup($put["id"])
 end
 
-Então("a API deverá retornar os dados da exclusão respondendo o código {int}") do |int|
+Then("the API should return the exclusion data by replying to the code {int}") do |int|
   expect($delete.code).to eq(int)
   expect($delete.message).to eq("OK")
 

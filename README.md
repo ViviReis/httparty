@@ -7,7 +7,7 @@ Install o Bundler:
 $ gem install bundler
 ```
 
-## Projeto
+## Project
 
 >Make the Project Clone
 >Run the command to install the dependencies

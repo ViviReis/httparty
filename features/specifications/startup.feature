@@ -19,6 +19,7 @@ Scenario: Change a Startup
     When make a request to change a startup
     Then the API will return the changed Startup data by replying to the code 200
 
+@delete
 Scenario: Delete a Startup
     Given the API address to maintain the Startup registry
     When make a request to delete a startup

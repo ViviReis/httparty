@@ -18,6 +18,7 @@ class Startup
 
     def putStartup (id)
       self.class.put("/startup/#{id}", @options)
+      
     end
 
     def deleteStartup (id)

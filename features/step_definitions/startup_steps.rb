@@ -43,7 +43,7 @@ Then("the API will return the corresponding Startup data by replying to the code
 end
 
 Given("make a request to change a startup") do
-  $put = @startup.putStartup($get["id"])
+  $put = @startup.putStartup($id)
 end
 
 Then("the API will return the changed Startup data by replying to the code {int}") do |int|
